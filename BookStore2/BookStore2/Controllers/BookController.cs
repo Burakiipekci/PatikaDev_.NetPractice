@@ -2,8 +2,11 @@
 using BookStore2.BookOperations;
 using BookStore2.Context;
 using BookStore2.Entity;
+using BookStore2.FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace BookStore2.Controllers
@@ -14,7 +17,7 @@ namespace BookStore2.Controllers
     {
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public BookController(BookStoreDbContext context,IMapper mapper)
+        public BookController(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -30,13 +33,31 @@ namespace BookStore2.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public IActionResult AddBook([FromBody]  AddBookModel newBook)
+        public IActionResult AddBook([FromBody] AddBookModel newBook)
         {
             List<BooksViewModel> result;
             AddBookQuery command = new AddBookQuery(_context, _mapper);
-            command.Model = newBook;
-            command.Handle();
 
+            try
+            {
+                command.Model = newBook;
+                BookValidation validator = new BookValidation();
+                ValidationResult validation = validator.Validate(command);
+                if (validation.IsValid)
+                    foreach (var item in validation.Errors)
+                    {
+                        System.Console.WriteLine("Prop." + item.PropertyName + "-- Eror Message:" + item.ErrorMessage);
+                    }
+                else
+                {
+                    command.Handle();
+                }
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
             return Ok();
         }
     }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "oF2XQDraHnmHdVRRpmeaIBB6fgCJLZmR/QmQbo5MmcZh6ySQqlJdfQzk/8gkaSIsi+ZA2dNnR7MdZhqKXowjbg==",
+  "dgSpecHash": "78SldQqJX7TzL1CBfpjFZUyZ5iStcTCVbhs29Yet58hN1mSlZdmCaW2UlEC4V511Y5lv+yTaOuzvetG9qDq2fQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\burak.ipekci\\source\\repos\\BookStore2\\BookStore2\\BookStore2.csproj",
+  "projectFilePath": "C:\\Users\\burak.ipekci\\Documents\\GitHub\\PatikaDev_.NetPractice\\BookStore2\\BookStore2\\BookStore2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\burak.ipekci\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\burak.ipekci\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\burak.ipekci\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\burak.ipekci\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\burak.ipekci\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.6\\microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\burak.ipekci\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.6\\microsoft.entityframeworkcore.abstractions.5.0.6.nupkg.sha512",

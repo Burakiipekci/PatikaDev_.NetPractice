@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\burak.ipekci\\source\\repos\\BookStore2\\BookStore2\\BookStore2.csproj": {}
+    "C:\\Users\\burak.ipekci\\Documents\\GitHub\\PatikaDev_.NetPractice\\BookStore2\\BookStore2\\BookStore2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\burak.ipekci\\source\\repos\\BookStore2\\BookStore2\\BookStore2.csproj": {
+    "C:\\Users\\burak.ipekci\\Documents\\GitHub\\PatikaDev_.NetPractice\\BookStore2\\BookStore2\\BookStore2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\burak.ipekci\\source\\repos\\BookStore2\\BookStore2\\BookStore2.csproj",
+        "projectUniqueName": "C:\\Users\\burak.ipekci\\Documents\\GitHub\\PatikaDev_.NetPractice\\BookStore2\\BookStore2\\BookStore2.csproj",
         "projectName": "BookStore2",
-        "projectPath": "C:\\Users\\burak.ipekci\\source\\repos\\BookStore2\\BookStore2\\BookStore2.csproj",
+        "projectPath": "C:\\Users\\burak.ipekci\\Documents\\GitHub\\PatikaDev_.NetPractice\\BookStore2\\BookStore2\\BookStore2.csproj",
         "packagesPath": "C:\\Users\\burak.ipekci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\burak.ipekci\\source\\repos\\BookStore2\\BookStore2\\obj\\",
+        "outputPath": "C:\\Users\\burak.ipekci\\Documents\\GitHub\\PatikaDev_.NetPractice\\BookStore2\\BookStore2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\burak.ipekci\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.1.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
