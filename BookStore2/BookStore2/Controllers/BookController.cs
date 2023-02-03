@@ -7,6 +7,7 @@ using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
@@ -49,7 +50,7 @@ namespace BookStore2.Controllers
                             "-- Error Message" + item.ErrorMessage);
                 else
                 {
-                command.Hande();
+                    command.Hande();
 
                 }
 
@@ -61,6 +62,23 @@ namespace BookStore2.Controllers
             }
             return Ok();
 
+        }
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook([FromRoute] int id, [FromBody] UpdateBookModel updatedBook)
+        {
+            UpdateBookQuery command = new UpdateBookQuery(_context);
+            try
+            {
+                command.BookId = id;
+                command.Model = updatedBook;
+                command.Validate();
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return Ok();
         }
     }
 }
