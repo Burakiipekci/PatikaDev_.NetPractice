@@ -7,7 +7,7 @@ namespace BookStore2.FluentValidation
 {
     public class UpdateBookCommandValidator:AbstractValidator<UpdateBookQuery>
     {
-        public UpdateBookCommandValidator() { 
+        public  UpdateBookCommandValidator() { 
         
         RuleFor(command => command.BookId).NotEmpty().GreaterThan(0);
         RuleFor(command => (int) command.Model!.GenreId).GreaterThan(0);

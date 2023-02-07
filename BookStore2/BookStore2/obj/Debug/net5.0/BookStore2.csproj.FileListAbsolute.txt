@@ -79,3 +79,4 @@ C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\BookSto
 C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\BookStore2\obj\Debug\net5.0\BookStore2.genruntimeconfig.cache
 C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\BookStore2\obj\Debug\net5.0\ref\BookStore2.dll
 C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\BookStore2\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\BookStore2\bin\Debug\net5.0\Newtonsoft.Json.dll

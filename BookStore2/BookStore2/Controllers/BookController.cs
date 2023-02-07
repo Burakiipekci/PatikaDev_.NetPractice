@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Intrinsics;
 
 namespace BookStore2.Controllers
 {
@@ -38,30 +39,13 @@ namespace BookStore2.Controllers
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-            try
-            {
-                command.Model = newBook;
-                CreateBookCommandValidator vl = new CreateBookCommandValidator();
-                ValidationResult result = vl.Validate(command);
-                if (!result.IsValid)
-                    foreach (var item in result.Errors)
-
-                        Console.WriteLine("Prop" + item.PropertyName +
-                            "-- Error Message" + item.ErrorMessage);
-                else
-                {
-                    command.Hande();
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
-            return Ok();
-
+                      
+            command.Model = newBook;
+            
+            CreateBookCommandValidator validator = new CreateBookCommandValidator();   
+            validator.ValidateAndThrow(command);           
+            command.Hande();
+            return Ok(command);
         }
         [HttpPut("{id}")]
         public IActionResult UpdateBook([FromRoute] int id, [FromBody] UpdateBookModel updatedBook)
@@ -71,14 +55,18 @@ namespace BookStore2.Controllers
             {
                 command.BookId = id;
                 command.Model = updatedBook;
-                command.Validate();
+                UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+                validator.ValidateAndThrow(command);
                 command.Handle();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest(ex.Message);
+
+                return BadRequest(e.Message);
             }
             return Ok();
+
+
         }
     }
 }
