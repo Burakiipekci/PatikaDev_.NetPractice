@@ -5,19 +5,19 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 
-namespace BookStore2.BookOperations
+namespace BookStore2.Application.BookOperations
 {
     public class UpdateBookQuery
     {
         private readonly BookStoreDbContext _context;
-        
+
         public int BookId { get; set; }
         public UpdateBookModel Model { get; set; }
-        public UpdateBookModel updateBook= new UpdateBookModel();
+        public UpdateBookModel updateBook = new UpdateBookModel();
         public UpdateBookQuery(BookStoreDbContext context)
         {
             _context = context;
-        
+
         }
         public void Handle()
         {
@@ -30,7 +30,7 @@ namespace BookStore2.BookOperations
             book.PageCount = updateBook.PageCount != default ? updateBook.PageCount : book.PageCount;
             _context.SaveChanges();
         }
-        
+
 
     }
     public class UpdateBookModel

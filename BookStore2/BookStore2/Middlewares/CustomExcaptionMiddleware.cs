@@ -20,6 +20,7 @@ namespace BookStore2.Middlewares
         public async Task Invoke(HttpContext context)
         {
             var watch = Stopwatch.StartNew(); //burda işlem içinde ne kadar zaman harcandığına bakıyorum.
+            
             try
             {
 
@@ -33,9 +34,6 @@ namespace BookStore2.Middlewares
                 message = "{Response} HTTP" + context.Request.Method + " - " + context.Request.Path + " responded "
                     + context.Response.StatusCode + " in " + watch.Elapsed.TotalMilliseconds + "ms";
                 System.Console.WriteLine(message);
-
-
-
             }
             catch (Exception ex)
             {

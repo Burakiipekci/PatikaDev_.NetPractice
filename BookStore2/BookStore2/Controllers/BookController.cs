@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BookStore2.BookOperations;
+using BookStore2.Application.BookOperations;
 using BookStore2.Context;
 using BookStore2.Entity;
 using BookStore2.FluentValidation;

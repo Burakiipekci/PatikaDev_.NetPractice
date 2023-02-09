@@ -1,7 +1,7 @@
 ﻿using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System;
 using FluentValidation;
-using BookStore2.BookOperations;
+using BookStore2.Application.BookOperations;
 
 namespace BookStore2.FluentValidation
 {

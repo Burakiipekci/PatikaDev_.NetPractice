@@ -4,7 +4,7 @@ using BookStore2.Entity;
 using System;
 using System.Linq;
 
-namespace BookStore2.BookOperations
+namespace BookStore2.Application.BookOperations
 {
     public class AddBookQuery
     {

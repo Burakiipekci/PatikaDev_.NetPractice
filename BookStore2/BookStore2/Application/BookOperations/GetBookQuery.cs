@@ -4,7 +4,7 @@ using BookStore2.Entity;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore2.BookOperations
+namespace BookStore2.Application.BookOperations
 {
     public class GetBookQuery
     {
@@ -18,7 +18,7 @@ namespace BookStore2.BookOperations
 
         public List<BooksViewModel> Handle()
         {
-            var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList<Book>();
+            var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList();
             List<BooksViewModel> vm = new List<BooksViewModel>();
             foreach (var book in bookList)
             {

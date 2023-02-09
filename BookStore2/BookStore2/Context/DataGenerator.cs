@@ -13,7 +13,23 @@ namespace BookStore2.Context
             using (var context = new BookStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
             {
                 if (context.Books.Any())
+                {
                     return;
+                }
+                context.Genres.AddRange(new Genre
+                {
+                    Name = "Personal Growth"
+
+
+                }, new Genre
+                {
+                    Name = "Science Fiction"
+                }, new Genre
+                {
+                    Name = "Romance"
+                }
+                );
+
                 context.Books.AddRange(
                     new Book
                     {

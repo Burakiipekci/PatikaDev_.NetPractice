@@ -50,7 +50,6 @@ namespace BookStore2
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore2 v1"));
             }
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
