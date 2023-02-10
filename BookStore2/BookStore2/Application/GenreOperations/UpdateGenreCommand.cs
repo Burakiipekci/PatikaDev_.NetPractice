@@ -25,9 +25,9 @@ namespace BookStore2.Application.GenreOperations
             if (_dbContext.Genres.Any(x => x.Name.ToLower() == Model.Name.ToLower() && x.Id != GenreId))
                 throw new InvalidOperationException("Kitap türü bulunamadı");
 
-            genre.Name = Model.Name.Trim() == default ? Model.Name : genre.Name;
-            genre.IsActive = Model.IsValid;
-            _dbContext.SaveChanges();   
+            genre.Name = string.IsNullOrEmpty(Model.Name.Trim()) == default ? genre.Name : Model.Name;
+            _dbContext.SaveChanges();
+           
 
         }
     }

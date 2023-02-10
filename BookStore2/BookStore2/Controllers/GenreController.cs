@@ -49,10 +49,11 @@ namespace BookStore2.Controllers
             return Ok();
         }
         [HttpPut("id")]
-        public IActionResult UpdateGenre(int id, [FromBody] UpdateGenreModel newGenre)
+        public IActionResult UpdateGenre(int id, [FromBody] UpdateGenreModel updateGenre)
         {
             UpdateGenreCommand command = new UpdateGenreCommand(_context);
             command.GenreId = id;
+            command.Model = updateGenre;
             UpdateGenreCommandValidator val = new UpdateGenreCommandValidator();
             val.ValidateAndThrow(command);
             command.Handle();

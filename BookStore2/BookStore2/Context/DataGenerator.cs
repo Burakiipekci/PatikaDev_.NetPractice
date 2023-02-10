@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 
 namespace BookStore2.Context
 {
@@ -47,6 +48,34 @@ namespace BookStore2.Context
                     }
                 );
                 context.SaveChanges();
+            }
+        }
+             public static List<Author> Authors
+        {
+            get
+            {
+                var authors = new List<Author>
+                {
+                    new Author
+                    {
+                        FirstName = "Ahmet",
+                        LastName = "Selim",
+                        DateOfBirth = DateTime.Parse("1969-06-03")
+                    },
+                    new Author
+                    {
+                        FirstName = "Necati",
+                        LastName = "Tugel",
+                        DateOfBirth = DateTime.Parse("1980-03-01")
+                    },
+                    new Author
+                    {
+                        FirstName = "Saliha",
+                        LastName = "Selman",
+                        DateOfBirth = DateTime.Parse("1960-07-11")
+                    },
+                };
+                return authors;
             }
         }
     }
