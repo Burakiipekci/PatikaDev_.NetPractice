@@ -38,8 +38,6 @@ namespace WebApi.UnitTests
                 .Throw<InvalidOperationException>().And.Message
                 .Should().Be("Kitap zaten mevcut");
 
-
-
         }
     }
 }
