@@ -11,10 +11,10 @@ namespace BookStore2.Application.AuthorOperations
     public class GetAuthorByIdQuery
     {
         public int Id { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetAuthorByIdQuery(BookStoreDbContext context, IMapper mapper, int itemId)
+        public GetAuthorByIdQuery(IBookStoreDbContext context, IMapper mapper, int itemId)
         {
             _context = context;
             _mapper = mapper;

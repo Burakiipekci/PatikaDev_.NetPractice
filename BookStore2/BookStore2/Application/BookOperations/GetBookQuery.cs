@@ -8,9 +8,9 @@ namespace BookStore2.Application.BookOperations
 {
     public class GetBookQuery
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
 
-        public GetBookQuery(BookStoreDbContext dbContext)
+        public GetBookQuery(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
 

@@ -9,12 +9,12 @@ namespace BookStore2.Application.AuthorOperations
 {
     public class DeleteAuthorCommand 
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
       
         public int Id { get; set; }
 
-        public DeleteAuthorCommand(BookStoreDbContext context, int itemId)
+        public DeleteAuthorCommand(IBookStoreDbContext context, int itemId)
         {
             _context = context;
             Id = itemId;
@@ -36,9 +36,9 @@ namespace BookStore2.Application.AuthorOperations
                 );
             }
 
-            _context.Remove(author);
+          //  _context.Remove(author);
             _context.SaveChanges();
-
+            
 
 
         }

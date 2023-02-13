@@ -9,10 +9,10 @@ namespace BookStore2.Application.AuthorOperations
 {
     public class GetAuthorsQuery
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetAuthorsQuery(IMapper mapper, BookStoreDbContext context)
+        public GetAuthorsQuery(IMapper mapper, IBookStoreDbContext context)
         {
             _mapper = mapper;
             _context = context;
@@ -21,36 +21,36 @@ namespace BookStore2.Application.AuthorOperations
         {
             var bookList = (
             from a in _context.Authors
-                join ba in _context.BookAuthors on a.Id equals ba.AuthorId into baGroup
-                select new AuthorsViewModel
-                {
-                    Id = a.Id,
-                    AuthorName = a.FirstName + ' ' + a.LastName,
-                    DateOfBirth = a.DateOfBirth.Date.ToString("dd/MM/yyyy"),
-                    Books = _context.Books
-                        .Where(
-                            w =>
-                                w.IsPublished
-                                && baGroup.Select(s => s.BookId).ToArray().Contains(w.Id)
-                        )
-                        .Select(
-                            sm =>
-                                new AuthorsBooksViewModel
-                                {
-                                    Id = sm.Id,
-                                    Title = sm.Title,
-                                    PageCount = sm.PageCount,
-                                    PublishDate = sm.PublishDate.Date.ToString("dd/MM/yyyy"),
-                                    Genre =
-                                        _context.Genres
-                                            .Where(f => f.Id == sm.GenreId && f.IsActive)
-                                            .Select(s => s.Name)
-                                            .FirstOrDefault()
-                                }
-                        )
-                        .ToListAsync()
-                }
-            ).ToList();
+            join ba in _context.BookAuthors on a.Id equals ba.AuthorId into baGroup
+            select new AuthorsViewModel
+            {
+                Id = a.Id,
+                AuthorName = a.FirstName + ' ' + a.LastName,
+                DateOfBirth = a.DateOfBirth.Date.ToString("dd/MM/yyyy"),
+                Books = _context.Books
+                    .Where(
+                        w =>
+                            w.IsPublished
+                            && baGroup.Select(s => s.BookId).ToArray().Contains(w.Id)
+                    )
+                    .Select(
+                        sm =>
+                            new AuthorsBooksViewModel
+                            {
+                                Id = sm.Id,
+                                Title = sm.Title,
+                                PageCount = sm.PageCount,
+                                PublishDate = sm.PublishDate.Date.ToString("dd/MM/yyyy"),
+                                Genre =
+                                    _context.Genres
+                                        .Where(f => f.Id == sm.GenreId && f.IsActive)
+                                        .Select(s => s.Name)
+                                        .FirstOrDefault() ?? "",
+                            }
+                    )
+                    .ToList()
+            }).ToList();
+           
 
             return bookList;
         }

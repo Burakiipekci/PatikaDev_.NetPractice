@@ -9,12 +9,12 @@ namespace BookStore2.Application.BookOperations
 {
     public class UpdateBookQuery
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
         public int BookId { get; set; }
         public UpdateBookModel Model { get; set; }
         public UpdateBookModel updateBook = new UpdateBookModel();
-        public UpdateBookQuery(BookStoreDbContext context)
+        public UpdateBookQuery(IBookStoreDbContext context)
         {
             _context = context;
 

@@ -38,6 +38,7 @@ namespace BookStore2
             });
 
             services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDb"));
+            services.AddScoped<IBookStoreDbContext>(options => options.GetService<BookStoreDbContext>());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 

@@ -4,12 +4,24 @@ using System.Collections.Generic;
 
 namespace BookStore2.Context
 {
-    public class BookStoreDbContext:DbContext
+    public class BookStoreDbContext: DbContext, IBookStoreDbContext
     {
         public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : base(options)
         {
 
         }
+
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Author> Authors { get; set;}
+
+        public DbSet<BookAuthor> BookAuthors { get; set; }
+
+        public override int SaveChanges()
+        {
+           return base.SaveChanges();
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Book<->Author bağlantısı
@@ -19,10 +31,7 @@ namespace BookStore2.Context
 
             modelBuilder.Entity<BookAuthor>().HasKey(ba => new { ba.BookId, ba.AuthorId });
         }
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Author> Authors { get; set; }
-        public DbSet<BookAuthor> BookAuthors { get; set; }
+       
 
     }
 }

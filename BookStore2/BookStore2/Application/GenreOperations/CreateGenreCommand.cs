@@ -9,10 +9,10 @@ namespace BookStore2.Application.GenreOperations
     public class CreateGenreCommand
     {
         public CreateGenreModel Model { get; set; }
-        private readonly BookStoreDbContext _contex;
+        private readonly IBookStoreDbContext _contex;
         private readonly IMapper _mapper;
 
-        public CreateGenreCommand(IMapper mapper, BookStoreDbContext contex)
+        public CreateGenreCommand(IMapper mapper, IBookStoreDbContext contex)
         {
             _mapper = mapper;
             _contex = contex;

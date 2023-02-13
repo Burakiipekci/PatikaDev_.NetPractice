@@ -13,9 +13,9 @@ namespace BookStore2.Application.AuthorOperations
         public UpdateAuthorModel Model { get; set; }
         public int Id { get; set; }
         private readonly IMapper _mapper;
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public UpdateAuthorCommand(IMapper mapper, BookStoreDbContext context, int itemId, UpdateAuthorModel model)
+        public UpdateAuthorCommand(IMapper mapper, IBookStoreDbContext context, int itemId, UpdateAuthorModel model)
         {
             _mapper = mapper;
             _context = context;
