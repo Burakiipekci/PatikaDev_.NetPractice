@@ -2,6 +2,7 @@
 using BookStore2.Application.AuthorOperations;
 using BookStore2.Application.BookOperations;
 using BookStore2.Application.GenreOperations;
+using BookStore2.Application.UserOperations;
 using BookStore2.Entity;
 
 namespace BookStore2.Common
@@ -35,6 +36,7 @@ namespace BookStore2.Common
             CreateMap<AddBookToAuthorModel, Book>();
             //add author to book mapping
             CreateMap<AddBookToAuthorModel, Author>();
+            CreateMap<CreateUserModel, User>();
 
 
 

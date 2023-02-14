@@ -45,7 +45,7 @@ namespace BookStore2.Application.AuthorOperations
                                     _context.Genres
                                         .Where(f => f.Id == sm.GenreId && f.IsActive)
                                         .Select(s => s.Name)
-                                        .FirstOrDefault() ?? "",
+                                        .FirstOrDefault(),
                             }
                     )
                     .ToList()

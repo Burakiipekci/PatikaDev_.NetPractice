@@ -126,3 +126,11 @@ C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.
 C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\BookStore2.dll
 C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\BookStore2.pdb
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\burak.ipekci\Documents\GitHub\PatikaDev_.NetPractice\BookStore2\WebApi.UnitTests\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
