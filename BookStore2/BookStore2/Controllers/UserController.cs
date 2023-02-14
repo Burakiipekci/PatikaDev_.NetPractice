@@ -44,5 +44,13 @@ namespace BookStore2.Controllers
             var token = cmd.Handle();
             return token;
         }
+        [HttpGet("refresh")]
+        public ActionResult<Token> CreateToken([FromBody] string token)
+        {
+            RefreshTokenCommand cmd = new RefreshTokenCommand(_context, _congfiguration);
+            cmd.RefreshToken = token;
+            var resultToken = cmd.Handle();
+            return resultToken;
+        }
     }
 }
